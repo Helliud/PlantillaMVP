@@ -154,7 +154,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Carro.h" />
+    <ClInclude Include="Fantasma.h" />
     <ClInclude Include="Modelo.h" />
+    <ClInclude Include="Piso.h" />
+    <ClInclude Include="Robot.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -162,8 +165,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Carro.cpp" />
+    <ClCompile Include="Fantasma.cpp" />
     <ClCompile Include="Modelo.cpp" />
+    <ClCompile Include="Piso.cpp" />
     <ClCompile Include="PlantillaOpenGL.cpp" />
+    <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

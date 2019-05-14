@@ -10,7 +10,7 @@ void Carro::actualizarMatrizModelo() {
 }
 
 void Carro::avanzar() {
-	coordenadas.z += 0.01;
+	coordenadas.z += 0.01f;
 	actualizarMatrizModelo();
 }
 

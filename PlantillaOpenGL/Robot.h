@@ -7,11 +7,16 @@ class Robot : public Modelo
 {
 public:
 	Robot();
-	void rotar();
 	bool textura = false;
 	vec3 getCoordenadas();
 	enum Direccion { Izquierda, Derecha };
-	void avanzar(Direccion direccion);
+	void avanzar();
+	float velocidadAngular = 2.0f;
+	float angulo = 0.0f;
+	void rotarIzq();
+	void rotarDer();
+	void regresar();
+	float anguloRobot;
 
 private:
 	void actualizarMatrizModelo();

@@ -6,41 +6,73 @@ void Robot::actualizarMatrizModelo() {
 	//Matriz identidad
 	modelo = mat4(1.0f);
 	modelo = translate(modelo, coordenadas);
-
+	//modelo = rotate(modelo, 0.01f, vec3(0.0f, anguloRobot, 0.0f));
+	//modelo = rotate(modelo, 0.0f, vec3(0.0f, 1.0f, 0.0f));
+	//modelo = rotate(modelo, angulo * 3.14159f / 180.0f, vec3(0.0f, 0.0f, 1.0f));
+	
 }
 
 vec3 Robot::getCoordenadas() {
 	return coordenadas;
 }
 
-void Robot::avanzar(Direccion direccion) {
+void Robot::avanzar() {
+	coordenadas.z -= 0.01f;
+	actualizarMatrizModelo();
+}
 
-	if (direccion == Direccion::Derecha) {
-		rotacion = -rotacion;
-		if (rotacion > 360) {
-			rotacion -= 360;
-		}
-	}
+void Robot::rotarIzq() {
+		coordenadas.x -= 0.01f;
+		actualizarMatrizModelo();
+}
 
-	if (direccion == Direccion::Izquierda) {
-		rotacion = +rotacion;
-		if (rotacion > 0) {
-			rotacion += 360;
-		}
-	}
-	angulo += rotacion;
+void Robot::rotarDer() {
+	coordenadas.x += 0.01f;
+	actualizarMatrizModelo();
+}
 
+void Robot::regresar() {
 	coordenadas.z += 0.01f;
 	actualizarMatrizModelo();
 }
 
-void Robot::rotar() {
-	
-}
+
 
 Robot::Robot() {	
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	//Neblina
+	//Cabeza - Parte trasera
+	vertices.push_back({ vec4(-0.9f, 0.40f,  9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.1f) });
+	vertices.push_back({ vec4(0.9f, 0.40f,  9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.1f) });
+	vertices.push_back({ vec4(0.9f, -0.5f,  9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.0f) });
+	vertices.push_back({ vec4(-0.9f, -0.5f,  9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.0f) });
+
+
+	//Cabeza - Parte abajo
+	vertices.push_back({ vec4(-0.9f, -0.5f,  -9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.00f) });
+	vertices.push_back({ vec4(-0.9f, -0.5f,  0.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.00f) });
+	vertices.push_back({ vec4(0.9f,  -0.5f,  0.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.00f) });
+	vertices.push_back({ vec4(0.9f, -0.5f,  -9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.00f) });
+
+	//Cabeza - Parte delantera
+	vertices.push_back({ vec4(-0.9f, 0.40f,  -3.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.1f) });
+	vertices.push_back({ vec4(0.9f, 0.40f,  -3.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.1f) });
+	vertices.push_back({ vec4(0.9f, -0.5f,  -3.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.0f) });
+	vertices.push_back({ vec4(-0.9f, -0.5f,  -3.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.0f) });
+
+	//Cabeza - Parte izquierda
+	vertices.push_back({ vec4(-0.9f, 0.40f,  -9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.1f) });
+	vertices.push_back({ vec4(-0.9f, 0.40f,  0.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.1f) });
+	vertices.push_back({ vec4(-0.9f,  -0.5f,  0.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.0f) });
+	vertices.push_back({ vec4(-0.9f, -0.5f,  -9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.0f) });
+
+	//Cabeza - Parte derecha
+	vertices.push_back({ vec4(0.9f, 0.40f,  -9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.1f) });
+	vertices.push_back({ vec4(0.9f, 0.40f,  0.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.1f) });
+	vertices.push_back({ vec4(0.9f,  -0.5f,  0.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.0f) });
+	vertices.push_back({ vec4(0.9f, -0.5f,  -9.0f, 1.0f),vec4(1.0f, 1.0f, 1.0f, 0.0f) });
 
 
 	//CABEZA

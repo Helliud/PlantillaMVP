@@ -17,6 +17,11 @@ public:
 	void rotarDer();
 	void regresar();
 	float anguloRobot;
+	bool darVueltaRobotDerecha;
+	bool darVueltaRobotIzquierda;
+	bool darVueltaRobotAtras;
+	bool darVueltaRobotAdelante;
+
 
 private:
 	void actualizarMatrizModelo();

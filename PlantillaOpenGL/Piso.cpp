@@ -9,12 +9,6 @@ void Piso::actualizarMatrizModelo() {
 
 }
 
-/*
-void Piso::avanzar() {
-	coordenadas.z -= 0.01f;
-	actualizarMatrizModelo();
-}*/
-
 
 Piso::Piso() {
 	glEnable(GL_BLEND);
@@ -26,6 +20,24 @@ Piso::Piso() {
 	vertices.push_back({ vec4(50.0f, -0.8f,  20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 1.0f) });
 	vertices.push_back({ vec4(-50.0f, -0.8f,  20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 1.0f) });
 
+	vertices.push_back({ vec4(-50.0f, 20.0f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(50.0f, 20.0f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(50.0f, -0.8f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(-50.0f, -0.8f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
 
+	vertices.push_back({ vec4(-50.0f, -0.8f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(-50.0f, -0.8f, 20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(-50.0f, 20.0f, 20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(-50.0f, 20.0f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	/*
+	vertices.push_back({ vec4(-50.0f, -0.8f, 20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(50.0f, -0.8f, 20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(50.0f, 20.0f, 20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(-50.0f, 20.0f, 20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });*/
+
+	vertices.push_back({ vec4(50.0f, -0.8f, 20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(50.0f, -0.8f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(50.0f, 20.0f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
+	vertices.push_back({ vec4(50.0f, 20.0f, 20.0, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
 }
 

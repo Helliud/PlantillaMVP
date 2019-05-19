@@ -7,12 +7,8 @@ class Robot : public Modelo
 {
 public:
 	Robot();
-	bool textura = false;
 	vec3 getCoordenadas();
-	enum Direccion { Izquierda, Derecha };
 	void avanzar();
-	float velocidadAngular = 2.0f;
-	float angulo = 0.0f;
 	void rotarIzq();
 	void rotarDer();
 	void regresar();
@@ -21,11 +17,19 @@ public:
 	bool darVueltaRobotIzquierda;
 	bool darVueltaRobotAtras;
 	bool darVueltaRobotAdelante;
+	void robotTiempoDiferencial();
 
+	double tiempoAnterior = 0.0f;
+	double tiempoActual = 0.0f;
+	double tiempoDiferencial = 0.0f;
+	float velocidad = 5.0f;
+	int bonusVelocidad = 1;
+
+
+	vec3 coordenadasRobot = vec3(-45.0f, 0.0f, 15.0f);
 
 private:
 	void actualizarMatrizModelo();
-	vec3 coordenadas = vec3(0.0f, 0.0f, 0.0f);
 	
 
 };

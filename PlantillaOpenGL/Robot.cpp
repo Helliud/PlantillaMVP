@@ -5,7 +5,8 @@
 void Robot::actualizarMatrizModelo() {
 	//Matriz identidad
 	modelo = mat4(1.0f);
-	modelo = translate(modelo, coordenadas);
+	modelo = translate(modelo, coordenadasRobot);
+
 	if (darVueltaRobotDerecha) {
 		modelo = rotate(modelo, -90.0f * 3.14159f / 180.0f , vec3(0.0f, 1.0f, 0.0f));
 	}
@@ -44,30 +45,37 @@ void Robot::actualizarMatrizModelo() {
 }
 
 vec3 Robot::getCoordenadas() {
-	return coordenadas;
+	return coordenadasRobot;
+}
+
+void Robot::robotTiempoDiferencial() {
+
+	tiempoActual = glfwGetTime();
+	tiempoDiferencial = tiempoActual - tiempoAnterior;
+
 }
 
 void Robot::avanzar() {
 	darVueltaRobotAdelante = true;
-	coordenadas.z -= 0.01f;
+	coordenadasRobot.z -= velocidad * (tiempoDiferencial * bonusVelocidad);
 	actualizarMatrizModelo();
 }
 
 void Robot::rotarIzq() {
 	darVueltaRobotIzquierda = true;
-		coordenadas.x -= 0.01f;
+	coordenadasRobot.x -= velocidad * (tiempoDiferencial * bonusVelocidad);
 		actualizarMatrizModelo();
 }
 
 void Robot::rotarDer() {
 	darVueltaRobotDerecha = true;
-	coordenadas.x += 0.01f;
+	coordenadasRobot.x += velocidad * (tiempoDiferencial * bonusVelocidad);
 	actualizarMatrizModelo();
 }
 
 void Robot::regresar() {
 	darVueltaRobotAtras = true;
-	coordenadas.z += 0.01f;
+	coordenadasRobot.z += velocidad * (tiempoDiferencial * bonusVelocidad);
 	actualizarMatrizModelo();
 }
 
@@ -209,22 +217,11 @@ Robot::Robot() {
 	vertices.push_back({ vec4(0.1f, -0.8f,  -0.25f, 1.0f),vec4(0.5f, 0.54f, 0.58f, 1.0f) });
 	vertices.push_back({ vec4(0.1f, -0.4f,  -0.75f, 1.0f),vec4(0.83f, 0.84f, 0.86f, 1.0f) });
 
-	/*
-	vertices.push_back({ vec4(0.101f, -0.2f, -0.25f, 1.0f),vec4(0.0f, 0.0f, 0.0f, 1.0f) });
-	vertices.push_back({ vec4(0.101f, -0.4f,  0.0f, 1.0f),vec4(0.0f, 0.0f, 0.0f, 1.0f) });
-	vertices.push_back({ vec4(0.101f, -0.6f,  -0.25f, 1.0f),vec4(0.0f, 0.0f, 0.0f, 1.0f) });
-	vertices.push_back({ vec4(0.101f, -0.4f,  -0.5f, 1.0f),vec4(0.0f, 0.0f, 0.0f, 1.0f) });*/
 
 	//Izquierda
 	vertices.push_back({ vec4(-0.1f, -0.05f,  -0.25f, 1.0f),vec4(0.5f, 0.54f, 0.58f, 1.0f) });
 	vertices.push_back({ vec4(-0.1f, -0.4f,  0.25f, 1.0f),vec4(0.83f, 0.84f, 0.86f, 1.0f) });
 	vertices.push_back({ vec4(-0.1f, -0.8f,  -0.25f, 1.0f),vec4(0.5f, 0.54f, 0.58f, 1.0f) });
 	vertices.push_back({ vec4(-0.1f, -0.4f,  -0.75f, 1.0f),vec4(0.83f, 0.84f, 0.86f, 1.0f) });
-
-	/*
-	vertices.push_back({ vec4(-0.101f, -0.2f, -0.25f, 1.0f),vec4(0.0f, 0.0f, 0.0f, 1.0f) });
-	vertices.push_back({ vec4(-0.101f, -0.4f,  0.0f, 1.0f),vec4(0.0f, 0.0f, 0.0f, 1.0f) });
-	vertices.push_back({ vec4(-0.101f, -0.6f,  -0.25f, 1.0f),vec4(0.0f, 0.0f, 0.0f, 1.0f) });
-	vertices.push_back({ vec4(-0.101f, -0.4f,  -0.5f, 1.0f),vec4(0.0f, 0.0f, 0.0f, 1.0f) });*/
 }
 

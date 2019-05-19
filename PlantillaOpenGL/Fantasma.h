@@ -16,9 +16,8 @@ public:
 	double tiempoActual = 0.0f;
 	double tiempoDiferencial = 0.0f;
 
-private:
 	void actualizarMatrizModelo();
-	vec3 coordenadas = vec3(0.0f, 0.0f, 0.0f);
+	vec3 coordenadasFantasma = vec3(45.0f, 0.0f, -95.0f);
 
 
 }; 

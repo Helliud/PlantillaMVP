@@ -23,32 +23,32 @@
     <ProjectGuid>{11263871-37B7-4941-949A-2BFB9122F6E7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>PlantillaOpenGL</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -153,9 +153,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Carro.h" />
     <ClInclude Include="Fantasma.h" />
     <ClInclude Include="Modelo.h" />
+    <ClInclude Include="Pila.h" />
     <ClInclude Include="Piso.h" />
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Shader.h" />
@@ -164,9 +164,9 @@
     <ClInclude Include="Vertice.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Carro.cpp" />
     <ClCompile Include="Fantasma.cpp" />
     <ClCompile Include="Modelo.cpp" />
+    <ClCompile Include="Pila.cpp" />
     <ClCompile Include="Piso.cpp" />
     <ClCompile Include="PlantillaOpenGL.cpp" />
     <ClCompile Include="Robot.cpp" />

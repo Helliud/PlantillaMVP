@@ -15,10 +15,10 @@ Piso::Piso() {
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
-	vertices.push_back({ vec4(-50.0f, -0.8f,  -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 1.0f) });
-	vertices.push_back({ vec4(50.0f, -0.8f,  -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 1.0f) });
-	vertices.push_back({ vec4(50.0f, -0.8f,  20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 1.0f) });
-	vertices.push_back({ vec4(-50.0f, -0.8f,  20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 1.0f) });
+	vertices.push_back({ vec4(-50.0f, -0.8f,  -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.25f) });
+	vertices.push_back({ vec4(50.0f, -0.8f,  -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.25f) });
+	vertices.push_back({ vec4(50.0f, -0.8f,  20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.25f) });
+	vertices.push_back({ vec4(-50.0f, -0.8f,  20.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.25f) });
 
 	vertices.push_back({ vec4(-50.0f, 20.0f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });
 	vertices.push_back({ vec4(50.0f, 20.0f, -100.0f, 1.0f),vec4(0.32f, 0.32f, 0.32f, 0.2f) });

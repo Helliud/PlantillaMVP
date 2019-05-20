@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #include "Fantasma.h"
 #include "Robot.h"
+#define Updates_Per_Second 16.0f
 
 void Fantasma::actualizarMatrizModelo() {
 	//Matriz identidad
@@ -15,19 +16,37 @@ void Fantasma::avanzar() {
 	actualizarMatrizModelo();
 }
 
-void Fantasma::rotar() {
-
-}
 
 void Fantasma::flotar() {
 	tiempoActual = glfwGetTime();
 	tiempoDiferencial = tiempoActual - tiempoAnterior;
 
-	if (coordenadasFantasma.y < -100.0f) {
-		coordenadasFantasma.y -= 1.0f;
-		
+	bajarFantasma();
+	actualizarMatrizModelo();
+
+}
+
+
+
+void Fantasma::bajarFantasma() {
+	if (definidor % 2 == 1){
+		if (coordenadasFantasma.y <= 0.22 && coordenadasFantasma.y > 0.0) {
+			definidor = 1;
+			coordenadasFantasma.y -= 0.00001f * tiempoActual;
+		}
+		else
+			definidor++;
+	}
+	if (definidor % 2 == 0) {
+		if (coordenadasFantasma.y <= 0.2 && coordenadasFantasma.y > -1.0) {
+			coordenadasFantasma.y += 0.00001f * tiempoActual;
+		}
+		else
+			definidor++;
 	}
 }
+
+
 
 Fantasma::Fantasma() {
 	glEnable(GL_BLEND);

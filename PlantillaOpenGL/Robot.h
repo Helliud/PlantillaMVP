@@ -22,7 +22,7 @@ public:
 	double tiempoAnterior = 0.0f;
 	double tiempoActual = 0.0f;
 	double tiempoDiferencial = 0.0f;
-	float velocidad = 5.0f;
+	float velocidad = 7.0f;
 	int bonusVelocidad = 1;
 
 

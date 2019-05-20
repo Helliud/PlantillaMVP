@@ -20,6 +20,8 @@ public:
 	double deltaTime = 0.0f;
 	int definidor = 1;
 
+	int bonusFantasma = 1;
+
 	void actualizarMatrizModelo();
 	vec3 coordenadasFantasma = vec3(45.0f, 0.2f, -95.0f);
 

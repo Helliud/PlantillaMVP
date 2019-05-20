@@ -11,10 +11,6 @@ void Fantasma::actualizarMatrizModelo() {
 
 }
 
-void Fantasma::avanzar() {
-	coordenadasFantasma.z -= 0.01f;
-	actualizarMatrizModelo();
-}
 
 
 void Fantasma::flotar() {
